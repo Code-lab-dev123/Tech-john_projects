@@ -1,0 +1,1573 @@
+<!Doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard</title>
+
+<!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!--END-->
+
+<!--BOOTSTRAP-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<!--END-->
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript"></script>
+  </head>
+  <body>
+   
+
+<header class="navbar sticky-top bg-light flex-md-nowrap p-0 shadow" data-bs-theme="light">
+
+  
+ <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-2 text-white" href="#">SCHOOL</a>
+
+ <div class="search">
+  <span class="fa fa-search"></span>
+  <input placeholder="Search .....">
+</div>
+
+
+ <button id="dateBtn"></button>
+  <h4 class="h2">
+    <h id="demo"></h>ADMIN
+  </h4>
+  <div class="btn-toolbar mb-2 mb-md-0">
+  </div>
+</div>
+
+
+  <ul class="navbar-nav flex-row d-md-none">
+    <li class="nav-iteme text-nowrap">
+      <button class="nav-link px-3 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
+        <i class="fa-solid fa-search sarch"></i>
+      </button>
+
+    <li class="nav-iteme text-nowrap">
+      <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas"  data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class=" fa-solid fa-bars bas"></i>
+      </button>
+
+  </ul>
+
+  <div id="navbarSearch" class="navbar-search w-100 collapse">
+    <input class="form-control w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
+  </div>
+  
+  
+ 
+</header>
+
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="   col-lg-2 p-0 bg-body-tertiary" style="overflow-y: auto;height: 50%;">
+      <div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+        <div class="offcanvas-header">
+    
+          <button id="dateBtn2"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-none">
+          <ul class="nav flex-column h-200" >
+            <li class="nav-item mt-5 ">
+              <a class="nav-link d-flex align-items-center gap-2 " aria-current="page" onclick="togglePage('page1')">
+                <i class=" fa-solid fa-house "></i>
+              Dashboard
+              </a>
+            </li><br/>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" onclick="togglePage('page3')" >
+                <i class="far fa-calendar-check"></i>
+                Schedule
+              </a>
+            </li><br/>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" 
+         onclick="togglePage('page6')" >
+         <i class="fas fa-file-alt"></i>
+          Accounts 
+              </a>
+            </li><br/>
+            <li class="nav-item">
+              <a href="https://classroom.google.com/?pli 1" class="nav-link d-flex align-items-center gap-2" 
+          onclick="togglePage('page7')" >
+                <i class="fa-solid fa-chalkboard-user"></i>
+               Online Exam
+              </a>
+            </li><br/>
+
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2" 
+            onclick="togglePage('page8')" >
+                  <i class="fa-solid fa-chalkboard-user"></i>
+               Attendance
+                </a>
+              </li><br/>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2" 
+            onclick="togglePage('page9')" >
+                  <i class="fa-solid fa-chalkboard-user"></i>
+              Admission
+                </a>
+              </li><br/>
+            <hr/><br/>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" onclick="togglePage('page4')" >
+                <i class="fas fa-cogs"></i>
+                Settings
+              </a>
+            </li><br/>
+
+           
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2 modal-link"  onclick="togglePage('page5')">
+                <i class="fas fa-sign-out-alt"></i>
+                Log out
+              </a>
+            </li><br/>
+       
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="overflow-y: auto;">
+
+
+<button class="statistics">
+  <i class="fa-solid fa-hands-holding-child ikon1"></i>
+ <h2 class="price">485</h2> 
+ <span class="info">Parents</span>
+</button>
+<button class="statistics">
+  <i class="fa-solid fa-user-graduate ikon2"></i>
+  <h2 class="price">512</h2> 
+  <span class="info">Students</span>
+</button>
+<button class="statistics">
+  <i class="fa-solid fa-chalkboard-user ikon3"></i>
+  <h2 class="price">24</h2> 
+  <span class="info">Teachers</span>
+</button>
+<button class="statistics">
+  <i class="fa-solid fa-users-rectangle ikon4"></i>
+  <h2 class="price">10</h2> 
+  <span class="info">Staff</span>
+</button>
+
+
+  <div class="chart-container">
+    <div id="chart_div" class="responsive-chart"></div>
+  </div>
+
+
+  <h2>Section title</h2>
+  <div class="table-responsive small">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">function</th>
+          <th scope="col">responsive</th>
+          <th scope="col">activities</th>
+          <th scope="col">punctuality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1,001</td>
+          <td>random</td>
+          <td>data</td>
+          <td>placeholder</td>
+          <td>text</td>
+        </tr>
+        <tr>
+          <td>1,002</td>
+          <td>placeholder</td>
+          <td>irrelevant</td>
+          <td>visual</td>
+          <td>layout</td>
+        </tr>
+        <tr>
+          <td>1,003</td>
+          <td>data</td>
+          <td>rich</td>
+          <td>dashboard</td>
+          <td>tabular</td>
+        </tr>
+        <tr>
+          <td>1,003</td>
+          <td>information</td>
+          <td>placeholder</td>
+          <td>illustrative</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>1,004</td>
+          <td>text</td>
+          <td>random</td>
+          <td>layout</td>
+          <td>dashboard</td>
+        </tr>
+        <tr>
+          <td>1,005</td>
+          <td>dashboard</td>
+          <td>irrelevant</td>
+          <td>text</td>
+          <td>placeholder</td>
+        </tr>
+        <tr>
+          <td>1,006</td>
+          <td>dashboard</td>
+          <td>illustrative</td>
+          <td>rich</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>1,007</td>
+          <td>placeholder</td>
+          <td>tabular</td>
+          <td>information</td>
+          <td>irrelevant</td>
+        </tr>
+        <tr>
+          <td>1,008</td>
+          <td>random</td>
+          <td>data</td>
+          <td>placeholder</td>
+          <td>text</td>
+        </tr>
+        <tr>
+          <td>1,009</td>
+          <td>placeholder</td>
+          <td>irrelevant</td>
+          <td>visual</td>
+          <td>layout</td>
+        </tr>
+        <tr>
+          <td>1,010</td>
+          <td>data</td>
+          <td>rich</td>
+          <td>dashboard</td>
+          <td>tabular</td>
+        </tr>
+        <tr>
+          <td>1,011</td>
+          <td>information</td>
+          <td>placeholder</td>
+          <td>illustrative</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>1,012</td>
+          <td>text</td>
+          <td>placeholder</td>
+          <td>layout</td>
+          <td>dashboard</td>
+        </tr>
+        <tr>
+          <td>1,013</td>
+          <td>dashboard</td>
+          <td>irrelevant</td>
+          <td>text</td>
+          <td>visual</td>
+        </tr>
+        <tr>
+          <td>1,014</td>
+          <td>dashboard</td>
+          <td>illustrative</td>
+          <td>rich</td>
+          <td>data</td>
+        </tr>
+        <tr>
+          <td>1,015</td>
+          <td>random</td>
+          <td>tabular</td>
+          <td>information</td>
+          <td>text</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+   </main>
+
+   
+ 
+    <div class="inner-page" id="page3">
+ <div class="container mt-5">
+  <h1 class="mb-4">Add New Schedule</h1>
+  <input type="text" id="taskInput" class="form-control" placeholder="Add a 
+new task">
+  <input type="datetime-local" id="dateTimeInput" class="form-control mb-2">
+  <button class="btn btn-primary mb-2" onclick="addTask()">Add Task</button>
+  <div class="task-list">
+  <ul id="taskList" class="list-group"></ul>
+  </div>
+  <div class="invalid-feedback" id="errorFeedback">Please enter both a task 
+and a valid date and time.</div>
+
+  </div>
+    </div>
+ 
+    <div class="inner-page" id="page4">
+      <div class="container-settings">
+        <main>
+          <i class="fa-solid fa-circle-user image"></i>
+          <button class="change-image"><i class="fa-solid fa-camera"></i></button>
+        <br><br>
+
+        <div>
+         
+
+        <button class="set-but"><i class="fa-solid fa-circle-user icon"></i>Contents</button><br><br>
+        <button class="set-but"><i class="fa-solid fa-circle-user icon"></i>lkopuk</button><br><br>
+        <button class="set-but"><i class="fa-solid fa-circle-user icon"></i>6luok8</button><br><br>
+        <button class="set-but"><i class="fa-solid fa-circle-user icon"></i>;/7oku8</button><br><br>
+        </div>
+        </main>
+        
+        </div> 
+    </div>
+ 
+   <div class="inner-page" id="page5">
+      <div class="modal modal-sheet position-static d-block  p-4 py-md-5" tabindex="-1" 
+      role="dialog" id="modalChoice">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content rounded-3 shadow">
+            <div class="modal-body p-4 text-center">
+              <h5 class="mb-0">Are you sure you want to Logout?</h5>
+              <p class="mb-0"></p>
+            </div>
+            <div class="modal-footer flex-nowrap p-0">
+              <a href="../Tech John projects/school front web .html" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 
+      rounded-0 border-end"><strong>Yes, enable</strong></a>
+              <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 
+      rounded-0" data-bs-dismiss="modal" onclick="removePage()">No thanks</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   </div>
+    
+ 
+    <div class="inner-page" id="page6">
+     
+    </div>
+
+
+
+    <div class="inner-page" id="page7">
+     
+  </div>
+</div>
+
+<div class="inner-page" id="page8">
+     
+</div>
+</div>
+
+<div class="inner-page" id="page9">
+     
+</div>
+</div>
+<style>
+body{
+  overflow-y: auto;
+  }
+   .h2{
+     color: rgb(167, 172, 173);
+     font-size: 25px;
+     margin-left:10px ;
+   }
+   #demo{
+    font-size: 25px;
+    color: rgb(167, 172, 173);
+   }
+  
+  
+   
+   .sarch , .bas{
+   color: rgb(127, 123, 123);
+   }
+   .navbar-brand {
+     padding-top: .75rem;
+     padding-bottom: .75rem;
+     background-color: rgba(0, 0, 0, .25);
+     box-shadow: inset 0px 4px 6px rgba(0, 0, 0, .25);
+   }
+  
+   .search {
+    position: relative;
+    color: #aaa;
+    font-size: 16px;
+  }
+  
+  .search {display: inline-block;}
+  
+  .search input {
+    width: 350px;
+    height: 50px;
+  
+    background: #fcfcfc;
+    border: 1px solid #aaa;
+    border-radius: 40px;
+    box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+  }
+  
+  .search input { text-indent: 32px;}
+  .search .fa-search { 
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .search .fa-search {right: auto; right: 10px;}
+  
+  
+  
+   #dateBtn{
+     width: 350x;
+     height: 60px;
+     border-radius: 15px;
+     font-size: 20px;
+  border: none;
+   }
+   
+   #dateBtn2{
+     width: 350px;
+     height: 60px;
+     border-radius: 15px;
+     font-size: 20px;
+   border: none;
+   }
+   form{
+     margin-right: 3%;
+     width: 20%;
+   }
+   .form-controler {
+     height: 50px;
+     border-radius: 10px;
+     border: none;
+     width: 100%;
+     padding-left: 10px;
+     transition: border-color 0.5s ease-in-out;
+   
+   }
+    
+   .form-control:focus , .form-controler:focus{
+     border-color: green;
+     box-shadow: 5px 1px 9px 1px green;
+   transition: border-color 0.5s ease-in-out;
+   }
+  
+   .dropdown-toggle{
+    font-size: 15px;
+    border: 1px solid grey;
+  }
+  .top{
+    font-size: 24px;
+  }
+  
+  
+  .container-fluid{
+    overflow-y: auto;
+  }
+   /*--------------CATEGORIZE-MAIN-PAGE--------------*/
+  
+  .statistics{
+    margin-top: 5%;
+    height: 100px;
+    width: 48%;
+    border:none;
+    border-radius: 20px;
+    margin-left: 1%;
+  
+  }
+  .price{
+    font-family: Helvetica;
+    margin-top: -50px;
+  }
+  .price:nth-of-type(1) {
+    color: rgb(108, 225, 108);
+  }
+  .price:nth-of-type(2) {
+    color: rgb(226, 187, 115);
+  }
+  .info{
+    font-family:  Helvetica;
+    color: rgb(177, 175, 175);
+  }
+  .ikon1 , .ikon2 , .ikon3 , .ikon4{
+    margin-right: 190px;
+    margin-top: 30px;
+    font-size: 35px;
+  }
+ 
+  .ikon1{
+    color: aqua;
+  }
+  .ikon2{
+    color: rgb(215, 177, 108);
+  }
+  .ikon3{
+    color: rgb(225, 124, 124);
+  }
+  .ikon4{
+    color: rgb(90, 176, 205);
+  }
+    .chart-container {
+  width: 100%;
+  border: 1px solid rgb(171, 168, 168);
+  border: none;
+  border-radius: 30px;
+  height: 350px;
+  margin-top: 80px;
+  }
+  
+  /* CSS for the responsive chart */
+  .responsive-chart {
+   width: 100%;
+   position: absolute;
+   height: auto;
+  }
+  
+  
+  
+   /*---------------CATEGORIZE-SETTINGS-PAGE-------------*/
+  
+   
+   /*--------------PAGE--OVERLAY--------------*/
+   .inner-page{
+       display: none;
+       color: black;
+       position: fixed;
+       height: 100%;
+       width: 60%;
+       background-color: white; 
+       padding: 20px;
+       box-sizing: border-box; 
+       transition: 5s ease;  
+    
+     }
+     #page2{
+     background-color: rgb(175, 156, 156);
+     margin-left: 30%;
+     width: 70%; 
+    }
+    #page3{
+   background-color: rgb(219, 216, 226);
+     margin-left: 30%;
+     width: 90%; 
+   
+    }
+    #page4{
+  
+     margin-left: 40%;
+     width: 90%; 
+    }
+    #page5{
+     background-color: transparent;
+     margin-left: 30%;
+     width: 90%; 
+    }
+    #page6{
+     margin-left: 30%;
+     width: 90%; 
+    }
+    #page7{
+     background-color: rgb(157, 169, 173);
+     margin-left: 30%;
+     width: 90%; 
+    }
+    #page8{
+      background-color: transparent;
+      margin-left: 10%;
+      width: 90%; 
+     }
+     /*----END-----*/
+   
+     
+     .bd-placeholder-img {
+       font-size: 1.125rem;
+       text-anchor: middle;
+       -webkit-user-select: none;
+       -moz-user-select: none;
+       user-select: none;
+     }
+     .b-example-divider {
+       width: 100%;
+       height: 3rem;
+       background-color: rgba(0, 0, 0, .1);
+       border: solid rgba(0, 0, 0, .15);
+       border-width: 1px 0;
+       box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, 
+   15);
+     }
+     .b-example-vr {
+       flex-shrink: 0;
+       width: 1.5rem;
+       height: 100vh;
+     }
+     .bi {
+       vertical-align: -.125em;
+       fill: currentColor;
+     }
+   
+     /*----------OFFCANVAS------------*/
+     .nav-item {
+   max-width:70%;
+   text-align:left ;
+   height: 60px;
+   border: none;
+   cursor: pointer;
+   transition: all 0.5s linear;
+   color: black;
+   border: 2px solid rgb(232, 232, 236);
+   border-radius: 10px;
+   margin-left: 10%;
+   padding-top:10px ;
+     }
+   
+     .nav-item a{
+       color: rgb(48, 45, 45);
+     }
+     .nav-item:hover{
+   background-color: rgb(211, 216, 218);
+   border-radius: 10px;
+   box-shadow:  0 3px 6px rgb(124, 130, 132);
+   border: none;
+   }
+   .nav-item:active,.nav-item:focus{
+     background-color: rgb(218, 211, 211);
+     border-radius: 10px;
+     box-shadow:20px 20px 60px 4px rgb(114, 112, 112) ;
+     border: none;
+   }
+   i{
+     padding-right: 20px;
+     font-size: 20px;
+     color: rgb(20, 20, 20);
+     } 
+  
+   
+  
+   /*------END--------*/
+   
+     .btn-bd-primary {
+       --bd-violet-bg: rgb(61, 58, 58);
+       --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+       --bs-btn-font-weight: 600;
+       --bs-btn-color: var(--bs-white);
+       --bs-btn-bg: var(--bd-violet-bg);
+       --bs-btn-border-color: var(--bd-violet-bg);
+       --bs-btn-hover-color: var(--bs-white);
+       --bs-btn-hover-bg: rgb(61, 58, 58);
+       --bs-btn-hover-border-color: rgb(61, 58, 58);
+       --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+       --bs-btn-active-color: var(--bs-btn-hover-color);
+       --bs-btn-active-bg: rgb(61, 58, 58);
+       --bs-btn-active-border-color:  rgb(61, 58, 58);
+     }
+     .bd-mode-toggle {
+       z-index: 1500;
+     }
+     .bd-mode-toggle .dropdown-menu .active .bi {
+       display: block !important;
+     }
+   
+   hr{
+     max-width: 100%;
+   }
+   
+   ul {
+       list-style: none;
+       padding: 0;
+   }
+   /*------------SHEDULE-STYLING-------------*/T6
+    body a {
+     color: black;
+   }
+   .container {
+     text-align: center;
+     box-shadow: 0px 5px 30px 40px rgba(0, 0, 0, 0.1); 
+     margin-top: 10px;
+     padding: 20px;
+     height: 85vh; 
+     width: 70%;
+     margin-left: 10%;
+     background-color: rgb(215, 225, 228);
+     border-radius: 10px;
+     }
+     .task-list{
+       border: 1px solid rgb(206, 200, 200);
+       border-radius: 10px;
+       overflow: auto;
+       width: 96%;
+       height: 70%;
+       margin-left: 2%;
+     }
+     
+   input{
+     height: 50px;
+   }
+ 
+
+   .delete-btn{
+    width: 10%;
+   margin-left: 86%;
+   margin-top: -11%;
+   }
+   .btn-task{
+    width: 95%;
+    margin-top: 1%;
+    margin-left: 2%;
+    height:50px ;
+    margin-bottom: 50px;
+    background-color: rgb(178, 176, 176);
+    border-color: #aaa;
+   }
+   .form-error {
+       border-color: red;
+       box-shadow: 5px 1px 9px 1px red;
+       transition: border-color 0.5s ease-in-out;
+   }
+   
+   .invalid-feedback {
+       display: none;
+       color: red;
+   }
+   
+   .invalid-feedback.active {
+       display: block;
+   }
+   
+   .icon {
+       position: relative;
+       display: inline-block;
+   }
+   
+   .icon::after {
+       content: '✓';
+       color: green;
+       position: absolute;
+       top: 50%;
+       right: 10px;
+       transform: translateY(-50%);
+       opacity: 0;
+       transition: opacity 0.3s ease-in-out;
+   }
+   
+   .form-control.valid + .icon::after {
+       opacity: 1;
+   }
+   header{
+   margin-top: -30px;
+   }
+   
+   .form-control{
+     width: 100%;
+     margin-bottom: 10px;
+     transition: border-color 0.5s ease-in-out;
+   }
+   .disabled-task {
+       opacity: 0.5;
+       pointer-events: none; 
+   }
+   
+   /*----------------------LOG OUT -----------------------------------*/
+   
+   .btn:hover{
+   background-color: rgb(216, 228, 231);
+   }
+   
+   
+   /*--------------------SETTINGS-------------------------------------*/
+   .container-settings{
+     border: 1px solid black;
+     width: 37%;
+     height: 100%;
+   margin-left: 30%;
+   border: none;
+   box-shadow:10px 10px 400px 10px rgb(169, 170, 170) ;
+   }
+   .image{
+   font-size: 150px;
+   text-align: center;
+   color: rgb(179, 187, 189);
+   margin-left: 40%;
+   }
+   .change-image{
+     width: 40px;
+     height: 40px;
+     border-radius: 20px;
+     border: none;
+     font-size: 20px;
+     margin-left: 10px;
+   }
+   .set-but{
+    width: 90%;
+    height: 60px;
+    border: none;
+    margin-left: 5%;
+    transition: .7s ease;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 40px;
+    background-color: aliceblue;
+   }
+   
+   
+   .icon{
+     text-align: left;
+     margin-right: 30px;
+     font-size: 20px;
+   }
+   .sign{
+    border-radius: 17px;
+    padding: 5px 10px;
+    border: none;
+   }
+   .sign:nth-of-type(1) {
+  width: 30px;
+   }
+   .member-amt{
+    display: grid;
+  grid-template-columns: repeat(2,50%);
+   }
+   /*------------------------GRADES & REPORT-----------------------------*/
+   .container-grade{
+     border: 1px solid black;
+     width: 50%;
+     height: 92%;
+     margin-top: 2%;
+     border-radius: 10px;
+     border: none;
+     margin-left: 20%;
+     box-shadow:10px 10px 400px 10px rgb(169, 170, 170) ;
+   }
+   hr{
+     width: 90%;
+     margin-left: 5%;
+     margin-top: -10px;
+   }
+   .head-result{
+     margin-left: 35%;
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: bold;
+     font-size: 50px;
+     padding-top: 30px;
+   }
+   label:nth-of-type(1) ,label:nth-of-type(2){
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 15px;
+   }
+   .create-report{
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 25px;
+     margin-left: 5%;
+   
+   }
+   .mail{
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 28px;
+     margin-left: 30%;
+   
+   }
+   .input-name{
+     width: 40%;
+     height: 30px;
+     margin-left: 5%;
+     border-radius: 5px;
+     margin-top: -20%;
+   }
+   .input-email{
+     width: 40%;
+     height: 30px;
+     margin-left: 70px;
+     border-radius: 5px;
+   }
+   .create-btn{
+     width: 95%;
+     height: 50px;
+     border-radius: 10px;
+     margin-left:16px;
+     font-size: 20px;
+     border: none;
+     transition: .5s ease;
+     margin-top: -80%;
+   }
+   .create-btn:hover{
+     background-color: rgb(211, 205, 205);
+   }
+   .note{
+     border: 2px solid rgb(219, 117, 117);
+     width: 90%;
+     margin-left:5% ;
+     padding: 10px;
+     border-radius: 7px;
+     color: red;
+     align-items: center;
+   }
+   .show-student{
+     border: 1px solid  rgb(204, 202, 202);
+     height: 30%;
+     width: 93%;
+     margin-left: 20px;
+     border-radius: 8px;
+   }
+   /*overlay page */
+   .overlay {
+     display: none;
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: transparent;
+     justify-content: center;
+   }
+   
+   .overlay-content {
+     background-color: #a14e4e;
+     border-radius: 10px;
+     width: 50%;
+     height: 900px;
+     margin-left: -50%;
+   }
+   
+   .overlay-btn {
+     position: fixed;
+     top: 20px;
+     right: 20px;
+   }
+   
+   .dynamic-button {
+     margin-right: 10px;
+     margin-bottom: 10px;
+     margin-left: 30%;
+     display: block;
+   }
+   
+   /*------------------------RESPONSIVE--------------------------------*/
+   @media(max-width:1820px){
+     .container{
+       margin-left: 220px;
+       width: 70%;
+     }
+     #page2{
+       margin-left: 303px;
+       width: 90%; 
+      }
+      #page3{
+       margin-left: 303px;
+       width: 90%; 
+      }
+      #page4{
+       margin-left: 303px;
+       width: 90%; 
+      }
+      #page5{
+       margin-left: 303px;
+       width: 90%; 
+      }
+      #page6{
+       margin-left: 303px;
+       width: 90%; 
+      }
+      #page7{
+       margin-left: 303px;
+       width: 90%; 
+      }
+      .chart-idv{
+        width:150% ;
+      }
+   }
+  
+   @media(max-width: 1550px){
+     .form-control{
+       width: 80%;
+     }
+     .container{
+       width:70%;
+     margin-left: 130px;
+     }
+     input{
+       width: 10%;
+       margin-left: 10%;
+     }
+     #page2{
+       margin-left: 203px;
+       width: 90%; 
+      }
+      #page3{
+       margin-left: 203px;
+       width: 90%; 
+      }
+      #page4{
+       margin-left: 203px;
+       width: 90%; 
+      }
+      #page5{
+       margin-left: 203px;
+       width: 90%; 
+      }
+      #page6{
+       margin-left: 203px;
+       width: 90%; 
+      }
+      #page7{
+       margin-left: 203px;
+       width: 90%; 
+      }
+      .chart-idv{
+        width:100% ;
+      }
+   }
+   @media (min-width: 1400px){
+     #page2{
+       margin-left: 297px;
+       width: 90%; 
+      }
+      #page3{
+       margin-left: 303px;
+       width: 90%; 
+      }
+      #page4{
+       margin-left: 303px;
+       width: 90%; 
+      }
+      #page5{
+       margin-left: 303px;
+       width: 90%; 
+      }
+      #page6{
+       margin-left: 303px;
+       width: 90%; 
+      }
+      #page7{
+       margin-left: 303px;
+       width: 90%; 
+      }
+      .chart-idv{
+        width:50% ;
+      }
+   }
+   @media (min-width: 1300px) {
+     .bd-placeholder-img-lg {
+       font-size: 3.5rem;
+     }
+     .sidebar .offcanvas-lg {
+       position: -webkit-sticky;
+       position: sticky;
+       top: 48px;
+     }
+     .search {
+       display: block;
+       border-radius: 10px;
+     }
+     .inner-page{
+       width: 80%;
+     }
+   }
+   @media(max-width:1050px) {
+     .container{
+       margin-left: 20px ;
+     }
+     .nav{
+      width: 150%;
+    }
+    .form-controler{
+      display: none;
+    }
+    .sarch{
+      display: inline-block;
+    }
+    .h2{
+      margin-left: 10%;
+    }
+    #dateBtn{
+      margin-left: 50px;
+    }
+    .navbar-brand{
+      width: 20%;
+    }
+     #page2{
+       margin-left: 26%;
+       width: 100%; 
+      }
+      #page3{
+       margin-left:26%;
+       width: 100%; 
+      }
+      #page4{
+       margin-left:26%;
+       width: 100%; 
+      }
+      #page5{
+       margin-left:26%;
+       width: 100%; 
+      }
+      #page6{
+       margin-left:26%;
+       width: 100%; 
+   }
+      #page7{
+     margin-left:26%;
+     width: 100%; 
+   }
+   }
+   @media (max-width:770px) {
+     .container{
+       margin-left: 1%;
+     }
+     .form{
+       display: none;
+     }
+     .form-controler{
+       display: none;
+     }
+     #dateBtn{
+       display: none;
+     }
+     #page2{
+       margin-left:200px;
+       width: 100%; 
+      }
+      #page3{
+       margin-left:200px;
+       width: 100%; 
+      }
+      #page4{
+       margin-left:200px;
+       width: 100%; 
+      }
+      #page5{
+       margin-left:200px;
+       width: 100%; 
+      }
+      #page6{
+       margin-left:200px;
+       width: 100%; 
+      }
+      #page7{
+       margin-left:200px;
+       width: 100%; 
+      }
+      .statistics{
+        margin-top: 10%;
+      }
+   }
+   @media (max-width: 767px) {
+     .inner-page{
+       width: 80%;
+       margin-left: 5%;
+     }
+     input{
+       width: 80%;
+       margin-left: 0px;
+     }
+     .container{
+       width:1600px;
+       margin-left: 15%;
+     }
+     .form-control{
+       width: 100%;
+     }
+     #page2{
+       margin-left:0;
+       width: 100%; 
+      }
+      #page3{
+       margin-left:0;
+       width: 100%; 
+      }
+      #page4{
+       margin-left:0;
+       width: 100%; 
+      }
+      #page5{
+       margin-left:0;
+       width: 100%; 
+      }
+      #page6{
+       margin-left:0;
+       width: 100%; 
+      }
+      #page7{
+       margin-left:0;
+       width: 100%; 
+      } 
+   }
+   @media (max-width: 680px) {
+     .container{
+       margin-left: 30px;
+       width: 90%;
+     }
+     .nav-item{
+      width: 54%;
+      margin-left: 5%;
+     }
+   }
+   
+   @media (max-width: 595px) {
+     .container{
+       margin-left: 30px;
+       width: 100%;
+     }
+     .navbar-brand{
+      display: none;
+     }
+     .h2{
+      margin-top: 20px;
+      margin-left: -20px;
+      font-weight: bold;
+      font-size: 25px;
+     }
+     .chart-idv{
+      width:40% ;
+    }
+   }
+   @media (max-width: 575px) {
+    .container , .container-class , .container-result-check , .container-settings{
+      margin-left: -20px;
+      width: 110%;
+    }
+    .container{
+      margin-top: 2px;
+     }
+     body{
+      overflow: scroll;
+     }
+     .search {
+      display: none;
+     }
+     .navbar-brand{
+      display: none;
+     }
+     #demo{
+     margin-left: 30px;
+     }
+     canvas{
+      height: 90%;
+     }
+  }
+   
+</style>
+
+
+
+
+<script>
+
+      //----------------------INTRA PAGES--------------------// 
+      var initialDisplayStates = {};
+        
+        function togglePage(pageId) {
+          var selectedPage = document.getElementById(pageId);
+           
+        
+          var pages = document.querySelectorAll('.inner-page');
+          for (var i = 0; i < pages.length; i++) {
+            if (pages[i] !== selectedPage) {
+              if (!(pages[i].id in initialDisplayStates)) {
+                initialDisplayStates[pages[i].id] = pages[i].style.display;
+              }
+              pages[i].style.display = initialDisplayStates[pages[i].id];
+            }
+          }
+          if (selectedPage) {
+            selectedPage.style.display = (selectedPage.style.display === 'none' ||
+   selectedPage.style.display === '') ? 'block' : 'none';
+          }
+        }
+   
+   
+      
+      
+      
+   //-------------------SCHEDULE--------------------//
+        function addTask() {
+       const taskInput = document.getElementById("taskInput");
+       const dateTimeInput = document.getElementById("dateTimeInput");
+       const taskList = document.getElementById("taskList");
+       const errorFeedback = document.getElementById("errorFeedback");
+   
+       const task = taskInput.value;
+       const dateTime = new Date(dateTimeInput.value);
+   
+       taskInput.classList.remove("form-error");
+       errorFeedback.classList.remove("active");
+   
+       if (!task || isNaN(dateTime.getTime())) {
+         
+           taskInput.classList.add("form-error");
+           errorFeedback.classList.add("active");
+           return;
+       }
+   
+     
+       taskInput.classList.remove("form-error");
+       errorFeedback.classList.remove("active");
+   
+       const listItem = document.createElement("ul");
+       listItem.className = "list-group";
+   
+       const taskDetails = document.createElement("button");
+       taskDetails.className = "btn btn-secondary btn-task ";
+       taskDetails.textContent = `Task: ${task}, Date and Time: ${dateTime.
+   toLocaleString()}`;
+   
+ 
+
+       const deleteBtn = document.createElement("div");
+       deleteBtn.className = "btn btn-danger delete-btn";
+       deleteBtn.textContent = "Delete"
+       deleteBtn.addEventListener("click", () => {
+           listItem.remove();
+       });
+   
+       listItem.appendChild(taskDetails);
+       listItem.appendChild(deleteBtn);
+       taskList.appendChild(listItem);
+       
+   
+       const now = new Date();
+   
+   
+       const timeDiff = dateTime.getTime() - now.getTime();
+   
+      
+       setTimeout(() => {
+     
+           const toast = document.createElement("div");
+           toast.className = "toast";
+           toast.setAttribute("role", "alert");
+           toast.setAttribute("aria-live", "assertive");
+           toast.setAttribute("aria-atomic", "true");
+   
+           const toastBody = document.createElement("div");
+           toastBody.className = "toast-body";
+           toastBody.textContent = `<button class="added">Task reminder: ${task}, Date and Time: $
+   {dateTime.toLocaleString()}</button>`;
+   
+           toast.appendChild(toastBody);
+   
+           document.body.appendChild(toast);
+   
+           new bootstrap.Toast(toast).show();
+   
+          
+           setTimeout(() => {
+               document.body.removeChild(toast);
+               listItem.classList.add("disabled-task");
+           }, 30000);
+   
+       }, timeDiff);
+   
+       taskInput.value = "";
+       dateTimeInput.value = "";
+     }
+     function deleteTask(button) {
+       const listItem = button.parentElement;
+       listItem.remove();
+   };
+   
+   //----------GREETING-----------------//
+   
+   var greeting;
+   var time = new Date().getHours();
+   if (time < 12) {
+       greeting = "GOOD MORNING";
+   } 
+   else if (time < 15) {
+       greeting = "GOOD AFTERNOON";
+   } 
+   else if (time < 19) {
+      greeting = "GOOD EVENING";
+   } 
+   else {
+       greeting = "GOOD NIGHT";
+   }
+   document.getElementById("demo").innerHTML = greeting;
+   
+   
+   
+   //----------------DATE AND TIME----------------//
+   
+   function updateButtons() {
+     const currentDateAndTime = new Date();
+     const options = {
+     month: 'long',
+     day: '2-digit',
+     year: 'numeric', 
+     hour: '2-digit',
+     minute: '2-digit',
+     second: '2-digit',
+     hour12: true ,
+    };
+     const formattedDate = currentDateAndTime.toLocaleDateString('en-US', options);
+     document.getElementById('dateBtn').textContent = formattedDate;
+   
+     document.getElementById('dateBtn2').textContent = 
+     formattedDate;
+     
+   }
+   setInterval(updateButtons, 1000);
+   
+   updateButtons()
+   
+   //------------------LOGOUT---------------//
+   
+   function removePage() {
+     
+   let element = document.getElementById("page5");
+   if (element) {
+     element.remove();
+   }
+   else {
+     console.error("page not found")
+   
+   }
+   }
+   
+   
+   //------------------------GRADES & REPORT--------------------//
+   
+   function create() {
+     const nameInput = document.getElementById("nameInput");
+     const emailInput = document.getElementById("emailInput");
+     const taskList = document.getElementById("taskList");
+     const errorFeedback = document.getElementById("errorFeedback");
+   
+     const name = nameInput.value;
+     const email = emailInput.value;
+   
+     nameInput.classList.remove("form-error");
+     emailInput.classList.remove("form-error");
+     errorFeedback.classList.remove("active");
+   
+     if (!name || !email) {
+       nameInput.classList.add("form-error");
+       emailInput.classList.add("form-error");
+       errorFeedback.classList.add("active");
+       return;
+     }
+   
+     nameInput.classList.remove("form-error");
+     emailInput.classList.remove("form-error");
+     errorFeedback.classList.remove("active");
+   
+     const listItem = document.createElement("ul");
+     listItem.className = "list-group";
+   
+     const detailsDiv = document.createElement("ul");
+     detailsDiv.textContent = `Name: ${name}, Email: ${email}`;
+   
+     listItem.appendChild(detailsDiv);
+     taskList.appendChild(listItem);
+   
+     nameInput.value = "";
+     emailInput.value = "";
+   }
+   
+   
+   
+   
+   //---------------------ADMIN--CHART--RANGE--JS--------------------------//
+   
+   
+   
+   
+   
+   
+   google.charts.load('current', {'packages':['corechart']});
+   google.charts.setOnLoadCallback(drawChart);
+   
+   function drawChart() {
+     // Create data for the histogram (bar chart)
+     var histogramData = new google.visualization.DataTable();
+     histogramData.addColumn('string', 'X');
+     histogramData.addColumn('number', 'Histogram');
+     histogramData.addColumn({type: 'string', role: 'style'}); // Add a column for style
+     var histogramChartData = [];
+     for (var i = 1; i <= 50; i++) {
+       var randomValue = Math.random() * 100;
+       var color = (randomValue > 50) ? 
+       'color: rgb(224, 165, 165);' : 'color: rgb(119, 119, 193);'; // Default color
+       if (randomValue > 75) {
+         color = 'color:rgb(219, 180, 108) ;'; // Change color if value is above 75
+       }
+       histogramChartData.push(['Bar ' + i, randomValue, color]); // Random values for demonstration
+     }
+     histogramData.addRows(histogramChartData);
+   
+     // Options for the histogram chart
+     var options = {
+       title: 'Histogram Chart with Styled Bars',
+       legend: { position: 'none' },
+       width: '100%', // Set the chart width to 100%
+       height: 500,
+       bars: 'vertical',
+       vAxis: { title: 'Value' },
+       hAxis: { title: 'Bar', showTextEvery: 50 } // Adjust this value to show fewer or more labels
+     };
+   
+     // Create the histogram chart
+     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+     chart.draw(histogramData, options);
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+     
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<link rel="stylesheet" href="../Tech John projects/Admins dashboard.css">
+</body>
+  </body>
+</html>
+
